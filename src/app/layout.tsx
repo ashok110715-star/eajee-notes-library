@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "EAJEE Notes Library",
   description:
     "Explore and access EAJEE study notes, chapter-wise resources and PDF downloads.",
+  other: {
+  "google-adsense-account": "ca-pub-8423038248045542",
+},
 };
 
 export default function RootLayout({
