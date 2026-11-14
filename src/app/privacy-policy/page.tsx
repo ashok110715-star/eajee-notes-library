@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
       </h2>
       <p>
         For privacy questions, contact:
-        YOUR-CONTACT-EMAIL
+        fukrafan057@gmail.com
       </p>
 
       <p className="mt-8 text-sm text-gray-500">
