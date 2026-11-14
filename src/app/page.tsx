@@ -13,39 +13,104 @@ import {
   ArrowRight,
   Sparkles,
   ShieldCheck,
-  Clock,
 } from "lucide-react";
 
-const subjects = ["All", "OC", "Physics", "Chemistry", "Maths"];
+const subjects = [
+  "All",
+  "Organic Chemistry",
+  "Inorganic Chemistry",
+  "Physical Chemistry",
+  "Physics",
+  "Maths",
+];
 
 const notes = [
   {
-    title: "EAJEE Organic Chemistry Notes",
-    teacher: "RA Sir",
-    subject: "OC",
-    description: "Chapter-wise Organic Chemistry study material.",
-    status: "Coming Soon",
-  },
-  {
-    title: "EAJEE Physics Notes",
-    teacher: "PW Faculty",
-    subject: "Physics",
-    description: "Physics notes and chapter-wise study resources.",
-    status: "Coming Soon",
-  },
-  {
-    title: "EAJEE Chemistry Notes",
-    teacher: "PW Faculty",
-    subject: "Chemistry",
-    description: "Chemistry study material and revision notes.",
-    status: "Coming Soon",
-  },
-  {
-    title: "EAJEE Mathematics Notes",
-    teacher: "PW Faculty",
+    title: "EAJEE Maths Made EJEE Notes",
+    teacher: "Sachin Jakhar Sir (Sacchhu Sir)",
     subject: "Maths",
-    description: "Mathematics notes and important concepts.",
-    status: "Coming Soon",
+    description: "Class 11 handwritten Maths notes for JEE Main and Advanced.",
+    pdfUrl: "",
+  },
+  {
+    title: "EAJEE Notes for Inorganic Chemistry",
+    teacher: "Om Pandey Sir",
+    subject: "Inorganic Chemistry",
+    description: "Class 11 and 12 Inorganic Chemistry notes for JEE Main and Advanced.",
+    pdfUrl: "",
+  },
+  {
+    title: "EAJEE Notes for Physical Chemistry",
+    teacher: "Faisal Razaq Sir",
+    subject: "Physical Chemistry",
+    description: "Physical Chemistry handwritten notes for JEE Main and Advanced.",
+    pdfUrl: "",
+  },
+  {
+    title: "SKC Physics Crush - Class 11",
+    teacher: "Saleem Bhaiya",
+    subject: "Physics",
+    description: "Class 11 Physics handwritten notes with important PYQs.",
+    pdfUrl: "",
+  },
+  {
+    title: "SKC Physics Crush - Class 12",
+    teacher: "Saleem Bhaiya",
+    subject: "Physics",
+    description: "Class 12 Physics handwritten notes with important PYQs.",
+    pdfUrl: "",
+  },
+  {
+    title: "Kattar Advanced EAJEE Notes for Physics",
+    teacher: "Rajwant Singh Sir",
+    subject: "Physics",
+    description: "Class 11 Physics notes for JEE Main and Advanced.",
+    pdfUrl: "",
+  },
+  {
+    title: "EAJEE Notes for Organic Chemistry",
+    teacher: "Rohit Agrawal Sir (RA Baba) & Shubh Karan Choudhary Sir (SKC Sir)",
+    subject: "Organic Chemistry",
+    description: "Organic Chemistry handwritten notes for Class 11 and 12.",
+    pdfUrl: "",
+  },
+];
+
+const teachers = [
+  {
+    name: "Sachin Jakhar Sir",
+    subject: "Maths",
+    book: "Maths Made EJEE",
+  },
+  {
+    name: "Om Pandey Sir",
+    subject: "Inorganic Chemistry",
+    book: "Kattar Advanced EAJEE Notes",
+  },
+  {
+    name: "Faisal Razaq Sir",
+    subject: "Physical Chemistry",
+    book: "EAJEE Notes for Physical Chemistry",
+  },
+  {
+    name: "Saleem Bhaiya",
+    subject: "Physics",
+    book: "SKC Physics Crush",
+  },
+  {
+    name: "Rajwant Singh Sir",
+    subject: "Physics",
+    book: "Kattar Advanced EAJEE Notes",
+  },
+  {
+    name: "Rohit Agrawal Sir (RA Baba)",
+    subject: "Organic Chemistry",
+    book: "EAJEE Organic Chemistry Notes",
+  },
+  {
+    name: "Shubh Karan Choudhary Sir (SKC Sir)",
+    subject: "Organic Chemistry",
+    book: "EAJEE Organic Chemistry Notes",
   },
 ];
 
@@ -86,7 +151,7 @@ export default function HomePage() {
 
           <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
             <a href="#home" className="hover:text-blue-700">Home</a>
-            <a href="#notes" className="hover:text-blue-700">Notes</a>
+            <a href="#notes" className="hover:text-blue-700">PDF Notes</a>
             <a href="#teachers" className="hover:text-blue-700">Teachers</a>
             <a href="#about" className="hover:text-blue-700">About</a>
           </nav>
@@ -103,7 +168,7 @@ export default function HomePage() {
         {menuOpen && (
           <nav className="grid gap-4 border-t bg-white px-5 py-5 text-sm font-semibold md:hidden">
             <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#notes" onClick={() => setMenuOpen(false)}>Notes</a>
+            <a href="#notes" onClick={() => setMenuOpen(false)}>PDF Notes</a>
             <a href="#teachers" onClick={() => setMenuOpen(false)}>Teachers</a>
             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           </nav>
@@ -126,14 +191,14 @@ export default function HomePage() {
 
             <p className="mt-6 max-w-lg text-base leading-7 text-slate-300">
               Explore EAJEE study resources in one organized library.
-              Find notes by teacher, subject and chapter.
+              Find PDF notes by teacher and subject.
             </p>
 
             <a
               href="#notes"
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-bold text-white transition hover:bg-blue-500"
             >
-              Explore Notes <ArrowRight size={18} />
+              Explore PDF Notes <ArrowRight size={18} />
             </a>
 
             <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-300">
@@ -176,7 +241,7 @@ export default function HomePage() {
             Advertisement
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            Ad space — Google AdSense integration after approval
+            Advertisement space
           </p>
         </div>
       </section>
@@ -187,10 +252,10 @@ export default function HomePage() {
             Explore Library
           </p>
           <h2 className="mt-2 text-3xl font-black md:text-4xl">
-            Find Your Notes
+            EAJEE PDF Notes
           </h2>
           <p className="mt-3 text-slate-500">
-            Search and filter the available EAJEE resources.
+            Search and filter notes by teacher or subject.
           </p>
         </div>
 
@@ -229,13 +294,8 @@ export default function HomePage() {
               key={note.title}
               className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
-                  <FileText size={25} />
-                </div>
-                <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">
-                  {note.status}
-                </span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                <FileText size={25} />
               </div>
 
               <p className="mt-5 text-xs font-bold uppercase tracking-wider text-blue-700">
@@ -250,17 +310,27 @@ export default function HomePage() {
                 {note.description}
               </p>
 
-              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-                <span className="text-sm font-semibold text-slate-600">
+              <div className="mt-5 border-t border-slate-100 pt-4">
+                <p className="text-sm font-semibold text-slate-600">
                   {note.teacher}
-                </span>
-                <button
-                  disabled
-                  className="flex cursor-not-allowed items-center gap-2 rounded-lg bg-slate-100 px-3 py-2 text-xs font-bold text-slate-400"
-                >
-                  <Download size={15} />
-                  Coming Soon
-                </button>
+                </p>
+
+                {note.pdfUrl ? (
+                  <a
+                    href={note.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-800"
+                  >
+                    <Download size={16} />
+                    Download PDF
+                  </a>
+                ) : (
+                  <span className="mt-4 inline-flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2.5 text-xs font-bold text-slate-500">
+                    <FileText size={15} />
+                    PDF not added yet
+                  </span>
+                )}
               </div>
             </article>
           ))}
@@ -285,21 +355,29 @@ export default function HomePage() {
           <h2 className="mt-2 text-3xl font-black">
             Learn From Your Teachers
           </h2>
-          <div className="mt-6 rounded-2xl border border-blue-100 bg-white p-6">
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">
-                <GraduationCap size={30} />
-              </div>
-              <div>
-                <h3 className="text-xl font-extrabold">RA Sir</h3>
-                <p className="text-sm text-slate-500">
-                  EAJEE OC Notes Collection
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {teachers.map((teacher) => (
+              <article
+                key={teacher.name}
+                className="rounded-2xl border border-blue-100 bg-white p-6"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
+                    <GraduationCap size={26} />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold">{teacher.name}</h3>
+                    <p className="text-sm text-blue-700">
+                      {teacher.subject}
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-slate-500">
+                  Notes: {teacher.book}
                 </p>
-              </div>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-500">
-              Authorized study resources will be added here.
-            </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -314,18 +392,19 @@ export default function HomePage() {
               A Simple Home for EAJEE Notes
             </h2>
             <p className="mt-4 leading-7 text-slate-600">
-              EAJEE Notes Library is designed to organize authorized
-              educational resources in one easy-to-use place.
+              EAJEE Notes Library is designed to organize educational
+              resources in one easy-to-use place. Find notes by teacher
+              and subject.
             </p>
           </div>
           <div className="rounded-2xl bg-slate-950 p-6 text-white">
-            <Clock className="text-blue-400" size={30} />
+            <FileText className="text-blue-400" size={30} />
             <h3 className="mt-4 text-xl font-bold">
-              More Resources Coming Soon
+              PDF Notes Library
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              The library will grow as authorized notes and PDF resources
-              become available.
+              PDF resources will be added when the authorized files
+              are available.
             </p>
           </div>
         </div>
