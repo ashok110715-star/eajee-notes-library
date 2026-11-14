@@ -418,6 +418,19 @@ export default function HomePage() {
         <p className="mt-4">
           © {new Date().getFullYear()} EAJEE Notes Library
         </p>
+        <nav className="mt-5 flex flex-wrap justify-center gap-5">
+  <a href="/about" className="text-blue-300 hover:underline">
+    About Us
+  </a>
+
+  <a href="/contact" className="text-blue-300 hover:underline">
+    Contact Us
+  </a>
+
+  <a href="/privacy-policy" className="text-blue-300 hover:underline">
+    Privacy Policy
+  </a>
+</nav>
       </footer>
     </main>
   );
